@@ -1,0 +1,793 @@
+/* Global styles */
+body {
+  font-family: 'Inter', sans-serif; /* Modern and professional font */
+  background-color: #f9f9f9; /* Light background for readability */
+  color: #2c3e50; /* Dark gray for text */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.text-primary {
+  color: #28a745; /* Green for primary text */
+}
+
+.text-primary:hover {
+  text-decoration: underline;
+  color: #218838; /* Darker green for hover */
+}
+
+.bg-light-gray {
+  background-color: #f4f5f7; /* Subtle light gray */
+}
+
+/* Utility classes */
+.mt-4 {
+  margin-top: 24px;
+}
+
+.mb-4 {
+  margin-bottom: 24px;
+}
+
+.p-4 {
+  padding: 24px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Buttons */
+.btn {
+  padding: 14px 28px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border: none;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: #28a745; /* Green for primary buttons */
+  color: white;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #218838; /* Darker green for hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: #ffc107; /* Yellow for secondary buttons */
+  color: white;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: #e0a800; /* Darker yellow for hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff; /* White for a clean look */
+  color: #2c3e50;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar Logo */
+.navbar-logo-img {
+  height: 60px; /* Increase the height of the logo */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the logo is cropped properly */
+  margin-right: 10px; /* Add spacing between the logo and navigation links */
+}
+
+.navbar-logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50; /* Dark gray for text */
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px; /* Add spacing between links */
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #28a745; /* Green for links */
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #218838; /* Darker green for hover */
+}
+
+/* Navbar Button */
+.navbar .btn {
+  padding: 8px 16px; /* Adjust padding for smaller size */
+  font-size: 14px; /* Smaller font size to match links */
+  border-radius: 4px; /* Subtle rounded corners */
+  box-shadow: none; /* Remove shadow for consistency */
+  transition: background-color 0.3s ease;
+}
+
+.navbar .btn-primary {
+  background-color: #28a745; /* Green for primary buttons */
+  color: white;
+  border: none;
+}
+
+.navbar .btn-primary:hover {
+  background-color: #218838; /* Darker green for hover */
+}
+
+/* Footer */
+.footer {
+  background-color: #2c3e50; /* Dark gray for footer */
+  color: white;
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 40px; /* Add spacing above the footer */
+}
+
+.footer a {
+  color: #28a745; /* Green for footer links */
+  margin: 0 8px;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #218838; /* Darker green for hover */
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #f4f5f7; /* Subtle light gray */
+  width: 280px; /* Compact width for simplicity */
+  padding: 24px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+  border-right: 1px solid #dee2e6; /* Subtle border for separation */
+}
+
+.sidebar a {
+  color: #28a745; /* Green for links */
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.sidebar a:hover {
+  color: #218838; /* Darker green for hover */
+}
+
+/* Page Content */
+main {
+  margin-left: 300px; /* Adjusted for sidebar */
+  padding: 24px;
+}
+
+/* Registration Page */
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-control:focus {
+  border-color: #28a745; /* Green border on focus */
+  outline: none;
+  box-shadow: 0 0 4px rgba(40, 167, 69, 0.25); /* Green shadow on focus */
+}
+
+/* Register Page */
+.register-page {
+  display: flex;
+  height: 100vh;
+}
+
+.register-left {
+  flex: 1;
+  background-color: #f4f5f7; /* Subtle light gray */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.register-left img {
+  max-width: 80%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.register-right {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-right h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.register-right h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Login Page */
+.login-page {
+  display: flex;
+  height: 100vh;
+}
+
+.login-left {
+  flex: 1;
+  background-color: #f4f5f7; /* Subtle light gray */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login-left img {
+  max-width: 80%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.login-right {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-right h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.login-right h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+  background: url('../public/assets/hero-image.jpg') no-repeat center center/cover;
+  /* Use a relative path to the public directory */
+  padding: 100px 0;
+  text-align: left;
+  color: white;
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+}
+
+.hero-title {
+  font-size: 48px; /* Ensure the title is prominent */
+  font-weight: 700;
+  color: #ffffff; /* White for contrast */
+}
+
+.hero-description {
+  font-size: 18px;
+  color: #e0e0e0; /* Light gray for description */
+  margin-top: 16px;
+}
+
+.hero-cta .btn-primary {
+  background-color: #28a745; /* Green for CTA */
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero-cta .btn-primary:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Features Section */
+.features-section {
+  padding: 60px 0;
+}
+
+.features-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.feature-card {
+  background-color: #ffffff; /* White background */
+  border: 1px solid #dee2e6; /* Light border */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.feature-card p {
+  font-size: 16px;
+  color: #6c757d;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-top: 40px;
+}
+
+.faq-item {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  background-color: #f4f5f7;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #e9ecef;
+}
+
+.faq-answer {
+  background-color: #ffffff;
+  border-top: 1px solid #dee2e6;
+  padding: 16px;
+  font-size: 16px;
+  color: #6c757d;
+}
+
+/* Blog Page */
+.blog-card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.blog-date {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.blog-excerpt {
+  font-size: 16px;
+  color: #6c757d;
+}
+
+.blog-card .btn-primary {
+  background-color: #28a745;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.blog-card .btn-primary:hover {
+  background-color: #218838;
+}
+
+/* Simplify Section */
+.simplify-section {
+  background-color: #ffffff; /* White background for contrast */
+  padding: 60px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+  margin-top: 40px;
+}
+
+/* Simplify Tool Page */
+textarea.form-control {
+  resize: none;
+  font-size: 16px;
+  padding: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+textarea.form-control:focus {
+  border-color: #28a745; /* Green border on focus */
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(40, 167, 69, 0.25); /* Green shadow on focus */
+}
+
+.file-upload-icon {
+  font-size: 18px;
+  color: #28a745; /* Green for the pin icon */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.file-upload-icon:hover {
+  color: #218838; /* Darker green on hover */
+}
+
+/* Textarea Container */
+.textarea-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif; /* Match ChatGPT font */
+}
+
+textarea.form-control {
+  width: 100%;
+  max-width: 600px;
+  padding: 14px 40px 14px 14px; /* Add padding for the pin icon */
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  resize: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  font-family: 'Inter', sans-serif; /* Match ChatGPT font */
+}
+
+textarea.form-control:focus {
+  border-color: #28a745; /* Green border on focus */
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(40, 167, 69, 0.25); /* Green shadow on focus */
+}
+
+/* File Upload Icon */
+.file-upload-icon {
+  font-size: 18px;
+  color: #28a745; /* Green for the pin icon */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.file-upload-icon:hover {
+  color: #218838; /* Darker green on hover */
+}
+
+.file-clear-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #dc3545; /* Red for clear icon */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.file-clear-icon:hover {
+  color: #a71d2a; /* Darker red on hover */
+}
+
+/* File Upload Section */
+.file-upload-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.file-upload-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f5f7; /* Light gray background */
+  color: #2c3e50; /* Dark gray text */
+  padding: 10px 20px;
+  border: 1px solid #ced4da; /* Light border */
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.file-upload-button:hover {
+  background-color: #e0f7fa; /* Light teal on hover */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.file-upload-icon {
+  font-size: 18px;
+  margin-right: 8px;
+  color: #28a745; /* Green for icon */
+}
+
+.file-preview {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  width: 100%;
+  max-width: 600px;
+}
+
+.file-preview span {
+  flex: 1;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.file-remove-icon {
+  font-size: 18px;
+  color: #dc3545; /* Red for remove */
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Hide default file input */
+input[type="file"] {
+  display: none;
+}
+
+.upload-progress {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+/* Floating Upload Button */
+.floating-upload {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.floating-upload-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #28a745; /* Green for primary buttons */
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.floating-upload-label:hover {
+  width: 140px; /* Expand on hover */
+  border-radius: 30px;
+}
+
+.floating-upload-icon {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.floating-upload-label:hover .floating-upload-icon {
+  transform: translateX(-20px); /* Move icon left on hover */
+}
+
+.floating-upload-text {
+  opacity: 0;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.floating-upload-label:hover .floating-upload-text {
+  opacity: 1; /* Show text on hover */
+}
+
+/* Simplify Tool Layout */
+.simplify-container {
+  background-color: #f9f9f9; /* Light background for readability */
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.simplify-tool {
+  display: flex;
+  gap: 40px; /* Add spacing between input and output boxes */
+  justify-content: space-between; /* Ensure boxes are separated */
+  align-items: flex-start; /* Align boxes at the top */
+}
+
+.simplify-box {
+  flex: 1; /* Ensure both boxes take equal space */
+  max-width: 48%; /* Reduce the width of each box to create more space */
+  position: relative;
+}
+
+.simplify-input,
+.simplify-output {
+  width: 100%;
+  height: 300px; /* Set a fixed height for the boxes */
+  border: 1px solid #ced4da; /* Add a border to the boxes */
+  border-radius: 8px; /* Add rounded corners */
+  padding: 16px;
+  font-size: 16px;
+  resize: none; /* Disable resizing */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  background-color: #ffffff; /* Ensure a white background for readability */
+}
+
+.simplify-input:focus,
+.simplify-output:focus {
+  outline: none;
+  border-color: #28a745; /* Green border on focus */
+  box-shadow: 0px 4px 8px rgba(40, 167, 69, 0.25); /* Green shadow on focus */
+}
+
+/* Simplify Button */
+.simplify-button {
+  width: 150px; /* Set a fixed width for the button */
+  height: 50px;
+  font-size: 16px; /* Font size for clear text */
+  font-weight: bold; /* Emphasized text */
+  border-radius: 8px; /* Add rounded corners */
+  background-color: #28a745; /* Green button */
+  color: #ffffff; /* White text for contrast */
+  border: none; /* Remove border */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the text */
+  margin: 0 auto; /* Center the button horizontally */
+}
+
+.simplify-button:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: translateY(-2px); /* Add lift effect on hover */
+}
+
+/* Responsive Design for Simplify Tool */
+@media (max-width: 768px) {
+  .simplify-tool {
+    flex-direction: column; /* Stack input and output boxes vertically */
+    gap: 16px; /* Maintain gap between stacked boxes */
+  }
+
+  .simplify-box {
+    max-width: 100%; /* Full-width boxes on smaller screens */
+  }
+
+  .simplify-button {
+    width: 100%; /* Full-width button on smaller screens */
+  }
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Roboto', Arial, sans-serif; /* Clean sans-serif font */
+  font-weight: 700; /* Bold headings */
+}
+
+body, p, textarea {
+  font-family: 'Roboto', Arial, sans-serif; /* Clean sans-serif font */
+  font-weight: 400; /* Normal weight for body text */
+  font-size: 16px; /* Base font size for body text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* Hide sidebar on smaller screens */
+  }
+
+  main {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .navbar {
+    font-size: 16px;
+  }
+
+  .navbar-links {
+    display: none; /* Hide links on smaller screens */
+  }
+
+  .navbar-toggle {
+    display: block; /* Show hamburger menu */
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .features-title {
+    font-size: 28px;
+  }
+
+  .btn {
+    width: 100%; /* Full-width buttons on mobile */
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
